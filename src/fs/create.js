@@ -3,6 +3,7 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
 const dirName = dirname(fileURLToPath(import.meta.url));
+const filesDir = join(dirName, 'files');
 
 const checkFileExists = async (filePath) => {
     try {
@@ -15,7 +16,7 @@ const checkFileExists = async (filePath) => {
 
 
 const create = async () => {
-    const freshFilePath = join(dirName, 'fresh.txt');
+    const freshFilePath = join(filesDir, 'fresh.txt');
 
     const isFileExist = await checkFileExists(freshFilePath);
     if (isFileExist) {
