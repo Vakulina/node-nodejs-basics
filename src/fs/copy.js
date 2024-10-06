@@ -16,7 +16,7 @@ const checkFileExists = async (filePath) => {
 }
 
 const copy = async () => {
-    const isDestDir =await checkFileExists(destDir);
+    const isDestDir = await checkFileExists(destDir);
     if (isDestDir) {
         throw new Error('FS operation failed');
     }
